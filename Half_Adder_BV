@@ -1,0 +1,14 @@
+architecture Behavioral of Half_adder is
+
+begin
+process(a,b)
+begin
+if(a='1') then
+	s<=not(b);
+	c<=b;
+else
+	s<=b;
+	c<=a;
+end if;
+end process;
+end Behavioral;
