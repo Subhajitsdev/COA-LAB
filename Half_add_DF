@@ -1,0 +1,7 @@
+architecture dataflow of Half_sub_DF is
+
+begin
+d<=a xor b;
+bout<=not(a) and b;
+
+end dataflow;
