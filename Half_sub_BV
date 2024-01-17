@@ -1,0 +1,14 @@
+architecture Behavioral of Half_sub is
+
+begin
+process(a,b)
+begin
+if(a='1') then
+	d<=not(b);
+	bout<=not(a);
+else
+	d<=b;
+	bout<=b;
+end if;
+end process;
+end Behavioral;
