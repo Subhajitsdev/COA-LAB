@@ -1,0 +1,15 @@
+architecture Behavioral of Full_sub-bv is
+
+begin
+process(a,b,c)
+begin
+if(a==b) then
+	s<=c;
+	cout<=a;
+else
+	s<=not(c);
+	cout<=c;
+end if;
+end process;
+
+end Behavioral;
