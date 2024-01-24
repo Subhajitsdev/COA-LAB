@@ -1,0 +1,7 @@
+architecture dataflow of Full_add is
+
+begin
+s<=a xor b xor c;
+cout<=(a and b) or (b and c) or (a and  c) ;
+
+end dataflow;
