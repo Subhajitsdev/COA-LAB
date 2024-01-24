@@ -1,4 +1,4 @@
-architecture dataflow of Full_add is
+architecture dataflow of Full_sub is
 
 begin
 d<=a xor b xor c;
