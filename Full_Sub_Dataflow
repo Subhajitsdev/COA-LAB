@@ -1,7 +1,7 @@
 architecture dataflow of Full_add is
 
 begin
-s<=a xor b xor c;
-cout<=(a and b) or (b and c) or (a and  c) ;
+d<=a xor b xor c;
+bout<=(not(a) and b) or (b and c) or (not(a) and  c) ;
 
 end dataflow;
