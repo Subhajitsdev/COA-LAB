@@ -1,0 +1,14 @@
+architecture Behavioral of Full_Sub_BV is
+
+begin
+process(a,b,c)
+begin
+if(a=b) then
+	d<=c;
+	bout<=c;
+else
+	d<=not(c);
+	bout<=b;
+end if;
+end process;
+end Behavioral;
