@@ -3,7 +3,7 @@ architecture Behavioral of Full_add-bv is
 begin
 process(a,b)
 begin
-if(a==b) then
+if(a=b) then
 	s<=c;
 	cout<=a;
 else
