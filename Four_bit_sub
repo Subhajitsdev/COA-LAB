@@ -1,0 +1,13 @@
+architecture Behavioral of Four_bit_sub is
+begin
+process(a,b,bin)
+variable u : STD_LOGIC_VECTOR (4 downto 0);
+begin
+u(0):=bin;
+for i in 0 to 3 loop --for i in 3 downto 0
+	d(i)<=a(i) xor b(i) xor u(i);
+	u(i+1):=(not(a(i)) and b(i)) or (not(a(i)) and u(i)) or (b(i) and u(i));
+end loop;
+bout<=u(4);
+end process;
+end Behavioral;
