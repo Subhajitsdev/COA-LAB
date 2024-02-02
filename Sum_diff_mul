@@ -1,0 +1,7 @@
+architecture Dataflow of File1 is
+
+begin
+s<=a+b;
+d<=a-b;
+m<=a*b;
+
