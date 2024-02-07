@@ -1,0 +1,20 @@
+entity Gray_to_bin_BV is
+    Port ( g : in  STD_LOGIC_VECTOR (3 downto 0);
+           b : inout  STD_LOGIC_VECTOR (3 downto 0));
+end Gray_to_bin_BV;
+
+architecture Behavioral of Gray_to_bin_BV is 
+begin
+process(b,g)
+begin
+b(3)<=g(3);
+for i in 2 downto 0 loop
+	if (b(i+1)=g(i)) then
+		b(i)<='0';
+	else
+		b(i)<='1';
+	end if;
+end loop;
+end process;
+end Behavioral;
+
