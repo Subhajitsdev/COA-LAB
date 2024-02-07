@@ -1,0 +1,15 @@
+architecture Behavioral of Bin_to_gray_BV is
+
+begin
+process(b)
+begin
+g(3)<=b(3);
+for i in 2 downto 0 loop
+	if (b(i+1)=b(i)) then
+		g(i)<='0';
+	else
+		g(i)<='1';
+	end if;
+end loop;
+end process;
+end Behavioral;
