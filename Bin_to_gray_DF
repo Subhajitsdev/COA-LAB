@@ -1,4 +1,4 @@
-architecture DataFlow of Add_sub is
+architecture DataFlow of Bin_to_gray_DF is
 
 begin
 g(3)<=b(3);
