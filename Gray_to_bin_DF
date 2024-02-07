@@ -1,0 +1,13 @@
+entity Gray_to_bin_DF is
+    Port ( g : in  STD_LOGIC_VECTOR (3 downto 0);
+           b : inout  STD_LOGIC_VECTOR (3 downto 0));
+end Gray_to_bin_DF;
+
+architecture DataFlow of Gray_to_bin_DF is
+
+begin
+b(3)<=g(3);
+b(2)<=b(3) xor g(2);
+b(1)<=b(2) xor g(1);
+b(0)<=b(1) xor g(0);
+end DataFlow;
