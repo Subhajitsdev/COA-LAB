@@ -1,0 +1,16 @@
+entity MUX41 is
+    Port ( S0 : in  STD_LOGIC;
+           S1 : in  STD_LOGIC;
+           I0 : in  STD_LOGIC;
+           I1 : in  STD_LOGIC;
+           I2 : in  STD_LOGIC;
+           I3 : in  STD_LOGIC;
+           Y : out  STD_LOGIC);
+end MUX41;
+
+architecture DataFlow of MUX41 is
+
+begin
+Y<=(not(S0) and not(S1) and I0) or (S0 and not(S1) and I1) or (not(S0) and S1 and I2) or (S0 and S1 and I3);
+
+end DataFlow;
