@@ -1,0 +1,12 @@
+entity MUX21 is
+    Port ( S0 : in  STD_LOGIC;
+           I0 : in  STD_LOGIC;
+           I1 : in  STD_LOGIC;
+           Y : out  STD_LOGIC);
+end MUX21;
+
+architecture DataFlow of MUX21 is
+
+begin
+Y<=(not(S0) and I0) or (S0 and I1);
+end DataFlow;
