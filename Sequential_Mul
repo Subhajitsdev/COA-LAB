@@ -1,0 +1,41 @@
+entity Seqm_bv is
+    Port ( M : in  STD_LOGIC_VECTOR (3 downto 0);
+           Q : in  STD_LOGIC_VECTOR (2 downto 0);
+           P : out  STD_LOGIC_VECTOR (6 downto 0));
+end Seqm_bv;
+
+architecture Behavioral of Seqm_bv is
+begin
+process(M,Q)
+variable A : STD_LOGIC_VECTOR (6 downto 0);
+variable S : STD_LOGIC_VECTOR (3 downto 0);
+variable C: STD_LOGIC;
+begin
+
+	for i in 3 to 6 loop
+		A(i):='0';
+	end loop;
+	
+	for i in 0 to 2 loop
+		A(i):=Q(i);
+	end loop;
+	
+	for i in 0 to 2 loop
+		C:='0';
+		if A(0)='1' then 
+			for j in 0 to 3 loop
+				S(j):=A(j+3) xor M(j) xor C;
+				C:= ((A(j+3)xor M(j))and C) or (A(j+3)and M(j));
+				A(j+3):=S(j);
+			end loop;
+		end if;
+		for j in 0 to 5 loop
+			A(j):=A(j+1);
+		end loop;
+		A(6):=C;
+	end loop;
+	for i in 0 to 6 loop
+		P(i)<=A(i);
+	end loop;
+end process;
+end Behavioral;
