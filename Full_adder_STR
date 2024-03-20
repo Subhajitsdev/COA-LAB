@@ -1,0 +1,21 @@
+architecture Behavioral of Full_adder is
+component HF is
+    Port ( a : in  STD_LOGIC;
+           b : in  STD_LOGIC;
+			  s : out STD_LOGIC;
+			  cout : out STD_LOGIC);
+end component;
+component ORDF is
+    Port ( a : in  STD_LOGIC;
+           b : in  STD_LOGIC;
+           c : out  STD_LOGIC);
+end component;
+signal x: STD_LOGIC;
+signal y: STD_LOGIC;
+signal z: STD_LOGIC;
+begin
+v0: HF port map(a,b,x,y);
+v1: HF port map(x,cin,s,z);
+v2: ORDF port map(y,z,cout);
+
+end Behavioral;
